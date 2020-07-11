@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "chat-app"
+    }
+  },
+  "defaultProject": "chat-app",
+  "cli": {
+    "analytics": "a14bd492-83f5-4387-8895-a23289f3e38f"
+  }
 }

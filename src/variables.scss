@@ -1,0 +1,17 @@
+//colors
+$border: rgba(0, 0, 0, .15);
+$bg-color: #303030;
+$bg-color-highlight: #333333;
+$text-color: #eeeeee;
+$higlight-color: rgba(255, 255, 255, 0.4);
+$shadow-color: rgba(0, 0, 0, 0.5);
+
+//shadows
+$outer-shadow-up: 4px 4px 8px -6px $shadow-color, -3px -3px 8px -6px $higlight-color;
+$inset-shadow-up: 3px 3px 3px -4px inset $higlight-color, -3px -3px 3px -4px inset $shadow-color;
+$inset-shadow-down: -4px -4px 8px -6px inset $higlight-color, 6px 6px 10px -6px inset $shadow-color;
+$shadow-drop: 0 0 10px -5px $shadow-color;
+
+//breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 1024px;
