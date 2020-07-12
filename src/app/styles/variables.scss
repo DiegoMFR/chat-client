@@ -1,0 +1,31 @@
+//Colors
+$pale-green: #5a865c;
+$transparent-black1: rgba(0, 0, 0, .5);
+$transparent-black2: rgba(0, 0, 0, .15);
+$dark-grey: #303030;
+$dark-grey-2: #333333;
+$pale-white: #eeeeee;
+$transparent-white:rgba(255, 255, 255, 0.4);
+
+//UI colors
+$border: $transparent-black2;
+$bg-color: $dark-grey;
+$bg-color-highlight: $dark-grey-2;
+$text-color: $pale-white;
+$higlight-color:$transparent-white;
+$shadow-color: $transparent-black1;
+$text-highlight: $pale-green;
+
+//shadows
+$outer-shadow-up: 4px 4px 8px -6px $shadow-color, -3px -3px 8px -6px $higlight-color;
+$inset-shadow-up: 3px 3px 3px -4px inset $higlight-color, -3px -3px 3px -4px inset $shadow-color;
+$inset-shadow-down: -4px -4px 8px -6px inset $higlight-color, 6px 6px 10px -6px inset $shadow-color;
+$shadow-drop: 0 0 10px -5px $shadow-color;
+
+//widths
+$width-mobile: 480px;
+$width-tablet: 1024px;
+
+//breakpoints
+$breakpoint-mobile: $width-mobile;
+$breakpoint-tablet: $width-tablet;

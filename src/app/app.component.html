@@ -1,30 +1,22 @@
 <nav class="header">
-  <h1 class="header__title">{{username}}'s chat</h1>
+  <h1 class="header__title">#{{chatRoom}}</h1>
 </nav>
-<section class="message-board">
-  <ul class="message-list">
-    <li *ngFor="let message of messages" class='message' [ngClass]="{'message--mine': message.author === userId}">
-      <i class="message-pointer"></i>
-      <h4 class="message--author">
-        {{ message.author }}
-      </h4>
-      <p class="message--body"> {{ message.content }} </p>
-    </li>
-  </ul>
-  <aside class="users-typing">
-    <span *ngFor="let userTyping of usersTyping; let last = last">
-      {{userTyping}}<ng-template [ngIf]="!last">, </ng-template>
-    </span> 
-    <ng-template [ngIf]="usersTyping.size">
-      <span *ngIf="usersTyping.size > 1; else elseBlock"> are typing...</span>
-      <ng-template #elseBlock> is typing...</ng-template>
-    </ng-template>
-  </aside>
-</section>
-
+<app-message-board [userId]="userId" ></app-message-board>
 <section class="input-zone">
-    <input class="input-zone__input" type="text" [(ngModel)]="tbMessage" (keyup)="listenKeyUp($event)"/>
-    <button class="input-zone__button" (click)="sendOnClick()"></button>
+  <div class="input-zone__wrapper">
+    <input class="input-zone__input nm-input" type="text" [(ngModel)]="tbMessage" (keyup)="listenKeyUp($event)"/>
+    <button class="input-zone__button nm-button" (click)="sendOnClick()"></button>
+  </div>
 </section>
+<ng-template [ngIf]="!closeLobby">
+  <nav class="header">
+    <h1 class="header__title">Start a new session</h1>
+  </nav>
+  <app-lobby 
+    [userId]="userId" 
+    (selectChatRoom)="onSelectChatRoom($event)" 
+    (dismissLobby)="onDismissLobby($event)">
+  </app-lobby>
+</ng-template>
 
 <router-outlet></router-outlet>

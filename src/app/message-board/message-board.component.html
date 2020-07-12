@@ -1,0 +1,20 @@
+<section class="message-board">
+    <ul class="message-list">
+      <li *ngFor="let message of messages" class='message nm-card' [ngClass]="{'message--mine': message.userId === userId}">
+        <i class="message-pointer"></i>
+        <h4 class="message--author" *ngIf="message.userId !== userId">
+          {{ message.userName }}
+        </h4>
+        <p class="message--body"> {{ message.content }} </p>
+      </li>
+    </ul>
+    <aside class="users-typing">
+      <span *ngFor="let userTyping of usersTyping | keyvalue; let last = last">
+        {{ userTyping.value }}<ng-template [ngIf]="!last">, </ng-template>
+      </span> 
+      <ng-template [ngIf]="usersTyping.size">
+        <span *ngIf="usersTyping.size > 1; else elseBlock"> are typing...</span>
+        <ng-template #elseBlock> is typing...</ng-template>
+      </ng-template>
+    </aside>
+  </section>

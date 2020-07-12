@@ -1,0 +1,57 @@
+@mixin neumorphic-bump {
+    box-shadow: $outer-shadow-up, $inset-shadow-up;
+}
+@mixin neumorphic-depress {
+    box-shadow: $outer-shadow-up, $inset-shadow-down;
+    border: 1px solid $bg-color;
+}
+
+.nm-form {
+    padding: 1rem;
+}
+
+.nm-card {
+    @include neumorphic-bump();
+    color: $text-color;
+}
+
+.nm-formfield {
+    display: flex;
+    align-items: baseline;
+    input, select {
+        flex-grow: 2;
+    }
+}
+
+.nm-input {
+    background-color: $bg-color;
+    @include neumorphic-depress();
+    border-radius: 3rem;
+    padding: 1rem;
+    color: $text-color;
+}
+
+.nm-select {
+    background-color: $bg-color;
+    @include neumorphic-depress();
+    border-radius: 3rem;
+    padding: 1rem;
+    color: $text-color;
+}
+
+.nm-button {
+    background-color: $bg-color;
+    border: none;
+    border-radius: 3rem;
+    padding: 1rem;
+    color: $text-color;
+    @include neumorphic-bump();
+    &:active {
+        @include neumorphic-depress();
+    }
+}
+
+.nm-label {
+    color: $text-color;
+    margin-right: 1rem;
+}

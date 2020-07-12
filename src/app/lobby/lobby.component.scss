@@ -1,0 +1,21 @@
+@import '../styles/variables.scss';
+@import '../styles/newmorphic.scss';
+
+.lobby {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    background-color: $bg-color;
+    border-bottom: 1px solid $border;
+    width: 100vw;
+    height: 100vh;
+}
+
+.lobby__form {
+    max-width: $width-mobile;
+    margin: auto;
+}
+
+.lobby__button {
+    width: 100%;
+}

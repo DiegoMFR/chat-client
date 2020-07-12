@@ -1,12 +1,6 @@
-@import '../variables.scss';
+@import './styles/variables.scss';
+@import './styles/newmorphic.scss';
 
-@mixin neumorphic-bump {
-    box-shadow: $outer-shadow-up, $inset-shadow-up;
-}
-@mixin neumorphic-depress {
-    box-shadow: $outer-shadow-up, $inset-shadow-down;
-    border: 1px solid $bg-color;
-}
 .header {
     box-shadow: $shadow-drop;
     color: $text-color;
@@ -15,79 +9,8 @@
 }
 
 .header__title {
-    margin: 0;
-}
-
-.message-board {
-    height: calc(100vh - 11rem);
-    overflow-y: auto;
-}
-.message-list {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.message {
-    display: inline-block;
-    align-self: flex-start;
-    list-style: none;
-    margin: .5rem 1rem;
-    border-radius: 1rem;
-    @include neumorphic-bump();
-    color: $text-color;
-    position: relative;
-}
-
-.message--mine{
-    align-self: flex-end;
-}
-
-.message-pointer {
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    position: absolute;
-    left: -0.8rem;;
-    right: auto;
-    overflow: hidden;
-    margin-top: 1.2rem;
-    &:after {
-        content: '';
-        @include neumorphic-bump();
-        background-color: $bg-color;
-        transform: translate(.5rem) rotate(45deg);
-        display: block;
-        width: 1rem;
-        height: 1rem;
-    }
-
-    @at-root .message--mine & {
-        right: -0.8rem;
-        left: auto;
-        &:after {
-            transform: translate(-0.5rem) rotate(45deg);
-        }
-    }
-}
-
-.message--author {
-    padding: 1em;
-    font-weight: bold;
-    margin: 0;
-    border-radius: 1rem 1rem 0 0;
-    border-bottom: 1px solid $border;
-}
-.message--body {
-    padding: 1em;
-    margin: 0;
-}
-
-.users-typing {
-    display: inline;
-    margin: 1em;
-    font-size: .8rem;
-    color: $text-color;
+    margin: 0 auto;
+    max-width: $width-tablet;
 }
 
 .input-zone {
@@ -99,26 +22,22 @@
     border-top: 1px solid $border;
 }
 
-.input-zone__input {
-    background-color: $bg-color;
-    @include neumorphic-depress();
+.input-zone__wrapper {
+    max-width: $width-tablet;
     width: 100%;
-    border-radius: 3rem;
-    padding: 1rem;
-    color: $text-color;
+    display: flex;
+    margin: auto;
+}
+
+.input-zone__input {
+    width: 100%;
 }
 
 .input-zone__button {
-    background-color: $bg-color;
-    border: none;
-    @include neumorphic-bump();
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
     margin: 0 0 0 1rem;
-    &:active {
-        @include neumorphic-depress();
-    }
 }
 
 .input-zone-input {

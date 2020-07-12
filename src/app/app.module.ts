@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MessageBoardComponent } from './message-board/message-board.component';
+import { LobbyComponent } from './lobby/lobby.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MessageBoardComponent,
+    LobbyComponent
   ],
   imports: [
     BrowserModule,
