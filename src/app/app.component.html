@@ -9,9 +9,6 @@
   </div>
 </section>
 <ng-template [ngIf]="!closeLobby">
-  <nav class="header">
-    <h1 class="header__title">Start a new session</h1>
-  </nav>
   <app-lobby 
     [userId]="userId" 
     (selectChatRoom)="onSelectChatRoom($event)" 

@@ -11,6 +11,18 @@
     height: 100vh;
 }
 
+.lobby__header {
+    box-shadow: $shadow-drop;
+    color: $text-color;
+    padding: 1rem;
+    border-bottom: 1px solid $border;
+}
+
+.lobby__title {
+    margin: 0 auto;
+    max-width: $width-tablet;
+}
+
 .lobby__form {
     max-width: $width-mobile;
     margin: auto;
