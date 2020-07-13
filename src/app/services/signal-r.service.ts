@@ -27,7 +27,7 @@ export class SignalRService {
 
   createConnection = (userName, chatRoom ) => {
     this.connection = new signalR.HubConnectionBuilder()
-      .withUrl(`https://localhost:5001/hub?username=${userName}&room=${chatRoom}`)
+      .withUrl(`https://diegosignalrchatapp.azurewebsites.net/hub?username=${userName}&room=${chatRoom}`)
       .build();
     this.connection
     .start()
