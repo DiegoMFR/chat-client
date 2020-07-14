@@ -3,9 +3,9 @@
 
 :host {
     flex-grow: 2;
+    overflow-y: auto;
 }
 .message-board {
-    overflow-y: auto;
     max-width: $width-tablet;
     margin: auto;
     font-family: 'Source Sans Pro', sans-serif;
