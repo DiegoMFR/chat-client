@@ -1,6 +1,12 @@
 @import './styles/variables.scss';
 @import './styles/newmorphic.scss';
 
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .header {
     box-shadow: $shadow-drop;
     color: $text-color;

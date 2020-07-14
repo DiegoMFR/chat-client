@@ -1,8 +1,10 @@
 @import '../styles/variables.scss';
 @import '../styles/newmorphic.scss';
 
+:host {
+    flex-grow: 2;
+}
 .message-board {
-    height: calc(100vh - 11rem);
     overflow-y: auto;
     max-width: $width-tablet;
     margin: auto;
