@@ -6,42 +6,10 @@
     color: $text-color;
     padding: 1rem;
     border-bottom: 1px solid $border;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .header__title {
     margin: 0 auto;
     max-width: $width-tablet;
-}
-
-.input-zone {
-    box-shadow: $shadow-drop;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    padding: 2rem;
-    border-top: 1px solid $border;
-}
-
-.input-zone__wrapper {
-    max-width: $width-tablet;
-    width: 100%;
-    display: flex;
-    margin: auto;
-}
-
-.input-zone__input {
-    width: 100%;
-}
-
-.input-zone__button {
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    margin: 0 0 0 1rem;
-}
-
-.input-zone-input {
-    flex: 1;
-    margin-right: 10px;
-    height: 100px;
 }

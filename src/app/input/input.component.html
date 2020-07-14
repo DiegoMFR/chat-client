@@ -1,0 +1,6 @@
+<section class="input-zone">
+    <div class="input-zone__wrapper">
+      <input class="input-zone__input nm-input" type="text" [(ngModel)]="message" (keyup)="listenKeyUp($event)" />
+      <button class="input-zone__button nm-button" (click)="sendOnClick()"></button>
+    </div>
+  </section>

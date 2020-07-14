@@ -8,25 +8,25 @@ import { SignalRService } from '../services/signal-r.service';
 })
 export class LobbyComponent implements OnInit {
   @Input() userId: number;
-  @Output() selectChatRoom = new EventEmitter<string>();
-  @Output() dismissLobby = new EventEmitter<boolean>();
-  uId: number;
+  @Output() sessionData = new EventEmitter<object>();
   chatRoom = 'general';
-  userName;
+  userName = '';
 
   constructor(
     private signalRService: SignalRService
     ) { }
 
   ngOnInit(): void {
-    this.userName = this.userId;
   }
 
   startSession = () => {
-    this.signalRService.createConnection(this.userName, this.chatRoom );
-    this.dismissLobby.emit(true);
-    this.selectChatRoom.emit(this.chatRoom);
-    console.log('selected room: ', this.chatRoom);
+    if (!this.userName){
+      this.userName = this.userId.toString();
+    }
+
+    const {userId, userName, chatRoom } = this;
+    this.signalRService.createConnection(userName, chatRoom );
+    this.sessionData.emit({userId, userName, chatRoom });
   }
 
 }

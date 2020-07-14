@@ -1,19 +1,18 @@
 <nav class="header">
   <h1 class="header__title">#{{chatRoom}}</h1>
 </nav>
-<app-message-board [userId]="userId" ></app-message-board>
-<section class="input-zone">
-  <div class="input-zone__wrapper">
-    <input class="input-zone__input nm-input" type="text" [(ngModel)]="tbMessage" (keyup)="listenKeyUp($event)"/>
-    <button class="input-zone__button nm-button" (click)="sendOnClick()"></button>
-  </div>
-</section>
-<ng-template [ngIf]="!closeLobby">
-  <app-lobby 
-    [userId]="userId" 
-    (selectChatRoom)="onSelectChatRoom($event)" 
-    (dismissLobby)="onDismissLobby($event)">
-  </app-lobby>
-</ng-template>
+<app-message-board
+  *ngIf="!isLobby"
+  [userId]="userId">
+</app-message-board>
+<app-input
+  *ngIf="!isLobby"
+  [userId]="userId">
+</app-input>
+<app-lobby
+  *ngIf="isLobby"
+  [userId]="userId"
+  (sessionData)="onSendData($event)">
+</app-lobby>
 
 <router-outlet></router-outlet>

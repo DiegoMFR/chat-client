@@ -9,12 +9,7 @@
         </p>
         <p class="nm-formfield">
             <label class="nm-label" for="roomselect">Chat room: </label>
-            <select name="roomSelector" class="nm-select" id="roomselect" [(ngModel)]="chatRoom">
-                <option value="general">#general</option>
-                <option value="arquiterture">#arquitecture</option>
-                <option value="newideas">#new ideas</option>
-                <option value="fridaydrinks">#friday drinks</option>
-            </select>
+            <input name="roomSelector" class="nm-select" id="roomselect" [(ngModel)]="chatRoom">
         </p>
         <p class="nm-formfield">
             <button class="lobby__button nm-button" (click)="startSession()">Start session</button>

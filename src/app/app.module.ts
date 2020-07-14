@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MessageBoardComponent } from './message-board/message-board.component';
 import { LobbyComponent } from './lobby/lobby.component';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageBoardComponent,
-    LobbyComponent
+    LobbyComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
