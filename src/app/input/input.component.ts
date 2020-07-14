@@ -30,6 +30,7 @@ export class InputComponent implements OnInit {
   }
 
   sendOnClick = () => {
+    this.messageService.createMessage(this.userId, this.message);
     this.signalRService.sendMessage(this.userId, this.message);
     this.message = '';
   }
